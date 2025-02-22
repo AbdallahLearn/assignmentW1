@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Arabic:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@mui/material@5.14.14/styles.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <title>بوابة سلامة</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mui/material@5.15.5/umd/material-ui.production.min.css">
+    <link rel="icon"  href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQTEhUSExMVFhUWGRobFxgYGB4gHBsaGR4YGBodHh0aHyggGB0lHhgXITEiJSkrMC4uHx8zODMtNygtMCsBCgoKDg0OGxAQGislICMtLy0tKy01LS4tKy8tNS0uLS0tLS0yLjA1Ky0tMi0tLS0yLy0tLy0tLzUvLy0tLS0tL//AABEIANgA6QMBIgACEQEDEQH/xAAbAAADAQEBAQEAAAAAAAAAAAAABQYEAwcCAf/EAEwQAAIBAwIDBQMHCQQIBQUAAAECAwAEEQUhEjFBBhMiUWEycYEHFCNCUpGhFTNTYnKCkqKxJDRDshZUY3ODwdHSJXSTo8I1RLPD4f/EABoBAQADAQEBAAAAAAAAAAAAAAABAwQCBQb/xAAuEQACAQIDBAoDAQEAAAAAAAAAAQIDEQQhMQUSUfATQWFxgZGxwdHhIjKhFPH/2gAMAwEAAhEDEQA/APcaKKKAKKKKAKKKKAKKKKAKKKxarqsNtGZbiVIkH1nYAe4Z5n0FAbaKkv8ASa6uNrGyYof8e6Jij96xkGV/4VHrX2Ozl3NvdajLj9HaosK+7jPFKf4hQFPLKqjLEAeZOB+NKrntXYx7Pe2yn1mQf/Kl8XYDT88T24mb7U7vMf8A3WbHwrWtjp8LrCIrSN2HgTgjUsP1Rjf4UB8jtvp3+v2n/rp/3VvtNctpfzdxC/7Ein+hpZBqdi6SOwgRI5XhYyBAONDjAzzzsR7673PZOwmGXs7ZsjYmFM4PrjNAsx5RUr/oHbJ/d3ubU9O4nkCj/hsWj+HDivlrTVLfeK4hvEH1J07qT3CWIcBPvQe+gKyipe07axBlivI5LKVtgJwO7Y+STKTG3uyD6VTg53FAftFFFAFFFFAFFFFAFFFFAFFFFAFFFFAFFFFAFFFFAFfjHG5rjfXiQxtLK6oiAlmY4AA6mpCO2m1U8cwaHT/qQbrJcjo8vVIj0j5tzbyoDRN2lmumaLTUV1Bw93J+YQ8iEA3uHHphR1bpWvR+yEMUgnmZ7q5/TzYJH+7T2IR6KB6k0+t4FRQiKFVRhVUYAA5AAbAV0oSFFcLi7VGRCfFIcIOpIBY/AAEk13oRcK8R7e67NLO8LSN3XEfojw7Y9nIXJVuR3YsOoTlXt1Qms9hkdkAGVaaMYGfo4QC8pz1kkkBLPz3A6bwyurGUo2R5Tb3kkTiVHZXUkg8yCccRHFkBiAPFjNe3dhNVe4tg0hLMDjvMoQ/8AXBByCGRDty6nznst2YS5y3BxBLoI65P5plYHrsQeEg16p2d0YW0ZXPE59p8YLhcqjMORk4OFS3NuEemOYaXOaVGdJuMnca0UVwvbpYkMjnCrux8h1J9BzPpXZefV1bJIhjkRXRhhlYAgjyIOxqWPZmazJfTZeFOZs5iTCep7tt2tz7sr+rVaDmv2gEfZ/tPHcs0LK0FygzJby4DgcuJSNpE8mUke6ntKO0HZ+K7VePiWRDmKZDiSJvNG6eoOx6g0s0XXJoZVstQK9635i4UYjuAOmOUcwHNOvNdtgIKqiiigCiiigCiiigCiiigCiiigCiiigCviWQKpZiAqgkk7AAbkk9BX3UbrrG/uvyemfm0PC96w5OTulsD67M/6uB9agOenxHVZFupVIsY2zbRMMd+ynaeQfY+wp5+0eYFWtfiKAAAAANgByAFZ9SvVhieZ/ZRSx+HT3nlQaHd5AMZIGTgep3OPuBpFLqpbUEtU9mOJpZT6nCov8xb7qy6ncGTVLSAezFHJO/vYNEv3Zb76VaZE0gvpYyoluXkQSM2FjROKNBnq+xOBy2zjbMXKZVG3ZcfQ6aTqSPPNqdxIscC5hteI4yoPjcDqWI6b8x0p1p/a2Gc5iSUxjnMyhIx+85BPuAJqZ0tLqDhQ2NvdcICh0mUkKNgFV/YHoAPM771a2oE6KZrbgKnZJQjYPLI4Sw5EjoahHNJt5eeXufQ1mH7ePUqwH3kYr51TXIIIu+klQJg8PiHjI3wv2j6Cuj6TAf8JB6qoB+BXBFItU0kRHiQq3NuF+EthfaOG2lAHPPiAzg5NVylUjna/d8GxKLJP5KdeijeaGV1QylWTJwC24K5PXdcDrvXplzqMSHDOA32ebfwjf8ACpRrhZcKsUMWBxMcKpAzjjLYBjTlgDxHI5YNP7LQYlHiAkJ55GF38k5fE5PrXFOcmrQz7dDupZyu8uw6vrEeDwZd+kY8LN58Ik4QT8aVL2us5i1vKWhZgVMc6FCQ2xGT4d8+dOjpcH6GLYgjwLsRuDy5g0o7Q38wJRNPNwB9aR4gnwySfvAq9XtmZajtmvS/oK+zs06Q3Wnsx7+3Ru4f7UZB7ph54IA+4dKoezutrc2sdwcLxABh0D54SP4v+VSujWl0LlLgrbRKisggWbJ4WwSoO4UZAIXPCMbAZJotLTEGqWseRzljXkyGRSeHHTDRnGOYwRnNEUQm428fr4PQKw61pMV1C0Ey8SN5bFSN1ZTzVgdwRWHQ9dWSC0dj4rhcD9tVLMP5W+6nldGmMlJXRL9m9WljmOn3hzMqloJuQuYhzPpKuwdfcw2O1TSXtTofzuHhV+7mjPHBKOccq+y3qDyI6gkUdk9bN1CTIvdzxMY7iP7Ei88easMMp6qRQkdUUUUAUUUUAUUUUAUUUUAUUUUAm7W6180tmlVeOQlY4U+3NIeGNfixGfQGv3srovzS3WItxyEl5pOskznikc+9uXkAB0pXIPnWqhecVggY+RuZgQvxSLJ/4gqroAqB1/VTdaa3m90IdvITYX+ULTjtPqXdzWLK3ha5MbY5eJWjwfcx/CpbR7WRrb5tGwWdr6RkJGQohxxOR5AgD3la5bM1Wd24rt9jdf3zpfXTLFcMpEcZkhjLsFRQzIhGysWfdidsbb8syabBOwC6LP8AtSOY/ict/wD2u7wyRcNu+rJHjYRW8WZCeZzuzlicknqSTVbo2iLD4u8nlYj2ppGY/wAJ8K/AUtc5jBzdn7fZy0jsvaw8LpaxI46+0VPozb/0p3RUrrHbFEJjgBdhzfgcxg+hUfSH0BA9c7V2o3yRo/GmuBUSZwcYzjbPLNQOq34xxTyxho137ySJcHY8lI4iCNuQ3IJ3pJf6202S8kjLtlmR+DfkEjVQrHfGT1x7W4pe6I2AQ+W9kGNiVXqx8OM8gFUcIJGQeiphVUVpPyKljN15RKGTVbOQosVxbnKAuRcJnveRIJ5v5HkevDwjNb2bu2kz4w0YUAYKHBHQcHTHn6Y615g0UQHEFYcLMpxG3sZPmuDw5zg5GOLbOK7RyqCMZDj2fBJwsPNDjijPoDgeR2NRHBxjLeT+A8a2rOJ7NXK5tkkUpIiup5qwBB94NeeaV2ukjOMyOBzjlR+IDllX4SSOe7cWeW3S30XWorleKMsCPaR1KuvTdT02OCMg9Ca6lBoshVjPQnNb7IWqeKPTVm8wkpQj3LkA/D7qW2d2kB+g028t5BttG0iOPsvgklfIjccx1B9EdAQQeRqP13SBb/Spf3Vsp+0WliHv4s8PxOKraK6lPd/KPtz/AERWbMtvZkI0fc6hwmNtmRJSxCke6QD41cWGrd5d3Nv0gWH73Dsf/jUjeWE7qLr55DcxxmNpe6jAZ0idZN+FiCygMRsDuw61h1q8aJtXmQ+2LZUYde8XmP3T+NRexUpunn1fTPU6kO0K/MryPUF2il4ILwdME4gmP7DNwE/Zf0qsVxkjO4wSPLPL+hrhqlglxDJBIMpKjIw9GGD8a7Nproqc7B6g8lr3cxzPbO0Ex82i2D/vpwP+9VHQBRRRQBRRRQBRRRQBXxNKFUsxwFBJPkBua+6m/lGmK6dcKpw0qiFf2p2WEf56A5fJzETafOXHjvHe5bPlKcxj4RiMfCqG6u1j4eM442CA/rNnA+OMe8ivq1gEaLGuyooUD0UYH9Kn+2YWe0uYUb6WJVfA9oFcSKR7+EgEdc+VDmbtG5KaixL3ETH+6X8VwM9I5W8XwBbi+Na4rezxPeXFw8STySGNFlK8UfFgkBPE3GwL4HmKVajqPFEL3bF7bG2lP1VnDKpZs9OAMR7qZWKxswGnWKsFGPnlyDwADbKcfiPwx7sVwYk03z4fwf8AY+ODdrWzaGP9LIMM/wCznLsvqcDyqppfoeTEGafvy2/eAAKf2Qu3D5c8+ZpV271ruIAiyCOSY8CuSBwAkB3Gfshhv0JB6V1ojbBWiYe0usNMWgibhjGVdxzduRUfqA8/tHI5A8S3S7GKWMFwzEZVlZjwZXYjhGEZfLb8Qa+4NHAwGfjjUeFcAe7iK7MB0AAHv2pnEgUBVAAAwABgAeQFeJtDaUJwUKDa4vS/ZYtoYae85Vbdi1sLLvRBlWiOOHkjMShPIEZyUI6YyOe3ULrUHicuCr5wVPNVGeEeRzu2R5+lU2ayX9kJACDwuPZbH4EfWU9R92Dg1zgNrzpNRqu8f6iMTgI1FeGT9RLZfX/bb+tco4cgxHI4MGMjmFOeEj1Uhlx5AZ51ogtZk4gYiSWJyjIRv+0yn8KxX9/HHIneMsbg4KOyhij7AgZ3HEF3Hk1fTU8VRqZQmn4njzw9WH7RZ3Ud4N/DIhxkdDt96sMHHkfMbdrO4bIdT3cqHGR0O2R+sjbHB5jHIjbFLqEKuriaPB8DeNfUqefQ5H73pRcahCrLIJY+iv419knY8/qk59xarnYqW8nkek6DqwuEORwyLs6+R6EeanmD7xzBphKNjsDsdjyPoee1eZ2euxQyLMJo/Ds4Dr4kPtDnuR7Q9Rjqa9NRgQCDkEZBHUGslSG6z1aFXpI3epAMNPSfEsUthOfrBjGje54z3bD34rDcaWiZsEbi725t5I2JyXgK42PUJ3bjbpjzql7RRz8bLEYbkY4mtJwuSvnG3/dkDz6VJT6pbW8kU0VtJbzoXSS3YHJWRWAaMHbZ+H2cZydqpZRNJOzt6fRT9k9YD/O7qRsI9yI4/UAJHGB7yR8SasK8x0uxK3Nhp3+rg3Fx/vDlgD+ySo9zV6PZ3aSgtGwZQxXI5EqcNg9cEEe8GukX0JNqz5fWTkA7jV3Xkt7AJMf7W2IRviY5I/4Kq6le2/0clhc/ortFY/qXCtAf5nQ/CqqpLgooooAooooAooooAqW7eb/MYv0l9Bn3R8U//wCoVU1Ldsv7zpn/AJs//guKAqKiO2bGGSPUoPF3RMVwo+tHncEeanI35Eg9Kt6h+1LG1l+exjvLabCXcQ3B+oHxyzjwn3AHntDKq/685dpOyhLae3iPis5JjdwkDiyO7IEYUcyG4Rj1HnT66SS4xNqB+b2gIEdqD45T9USAbsT+jH3bbq4l+a3lp3WbiDu5ntFTd8SgHgJO2AfrHkCc8qY2qOL2N7kia9f83CpzFaxfWY+uNs9T781yjNDrXb4ffYi9iAAAAwMDA8vTaoXXrkyXMh6JiNfhux9/ExB/ZFXlea5JLN9p3b+J2b/nWmgryO8ZK1O3E76LcAcUGd48Ff2Gzw/w4K+4L50zzUxG3C7S7jhkAJ/UIjV8+gxxfAGqJXyMg5HSvldrYXoa7a0ln8nqYCt0tJX1WR1zRmueaX65qgt4S+3FyQebHl8BuT6CvOp05VJKMdWbJWirsZg1n1CzWWNo2+sOfUEHKkeoIBHqKkeyWtYk7ljtIcqT9vrn9r+vvqzzWjFYaeEq7r11TK6U41oXQhuVYq8bbSAZGOR58Lr6ZGccwfgT0VhIm/suvL0Yf9DWjVkwVmzsuVbyCNg8XphguT5ZzypfpUqmFCrArjAIOxA2BB6jAr6/Z2K/0UVJ66M+cxuH6Co0tNUdrKQlFydxs37Skq34g1Z9jrjit+DrExT93ZkHwRlHwqJtHGZBkbOevmFb+rGqjsTL451B2xG3xPeA/gorRWX4kYSVqluJs7W2kEioJnMTcX0M42McnTxfVzywdjy54qU7TXlwlpLb3qZkUBoLpF8DsjKwzgfRucegO/xtO1LKLaQvF30ePpUHMx/WK/rL7Xw86jJZZYbGZFY3VjJC4hlG7xZBAWQc+EHbP1cb4HLGzTW1fdzf56jHcSzBWkQYvNTb6MZ3igGMHPQkY36AZ+rXomhWkcES20ZB7lVU48yM5PkTu2PX1rz6G4e3ihmGJb+6ijjt1A2iiAAB36nmTyznoDV72b04W8IhL8cvtysTlmd8kseuCQQM9B6UQoftzzd6iv5Tx/4ZcOOcQSUe+KRJB/lqpU5GanPlH/8Apd7/AOXk/wApp9Z/m0/ZX+gro1HaiiigCiiigCiiigCpbtyMNp8n2L6IH/iLLEPxdaqamPlIU/k+WUc4GjnH/AkSU/gpoCmqJ7SwSWzvdQATWz5F3b8x5M6jo2Pa+89SLSNwQCORGR7jUh2hsc3Bks5xDegAtExws6jllTs/lxDPkcYyIZVWX488+BJyxNBPZS2ciywyGQWwcnwNKOExufJWYHHPmPWm2nRd1cPAkvHL+c1C7O3Ag8XdoT7GeXoPd4UeuIvdNLGrWtxDIkktqR4eLIXvYs9Mlc4yNh6EulEB4YYifmkSrdXsx3aViO8RGP1mbZiPcK4Rjjk+eerPgj0eNgQCORGRXlx0+PLAxoSHcElRnKuwPT0r0HQL1poUkkAVpQXVOqoT4B6nhK5PmTUlrcHd3Mq9GIkX3Pz/AJ1f8K1UH+Rbi7umpISWthFmQd1Hs/2B1VG8vWtWiPwSSwgAIOFkA2CggBgANgOLcepavhGxKw+0oYe9fC34FK5iZYrnjOyyR8LNnZTG2Vz6HvGGao2rS6TCysrtZ8+Bzs6pu4hXeTKCvNO2GqNPPwp+bjyq+p+s33jA9B61d6s792VjBLNtkfVB5nn8B6kVMDQm/Rt9w/615GxKdGMnWqyimskm14s9Tac6tlTpxb42T8iOHGNxkEbgjmCNwR616n2b1b5xCGOBIvhkH63mPQ8/vHSp38hN+jb7h/1rZpNlJDIGWNsHAcbbjz58xz+8da9Ha0cNiaN41I70c1ms+K56zHgJ16VS0oS3Xrk/Mqs0muNKVGJSFWVtyAqZVupHFgFT5cwfPOzbNGa+XwuJqYee/D6Z7lfDwrR3ZE/HbKneM9uQC2fzanACqM+HOORqt7DQKHnZQACsQ2AAO8p6ehFLL2cpG7DmFOPf0HxOBT/sLZiO2z0dsj9lQI1+BCcX71fS4LHVMTTk5pKzWh5FXBwoVY7rej1NXaWSQR/QMBOMvGh5SBPbQjrlT9+D0rzu8cJZXFxaMBbTjgnt2OGhlJAPB6b8ttiPIYq+1MrSyi2VgsjKJ7KQH/EjzxJnrld/cx8qku0LRXIt+7zDLdvw3UZ9hWiOGZlPIgljzGRnNXsx13du3PPobbdHtjGqAT6lLGioOaW8QUAc+RxuSfXp7V32c00QRlDJ3kpPFNITlmc+fkAMADoAKibaN5DItmxihY5udQk2aTzEZ2wo5DGAPTrcdmoIEgVbc8Ue/j3PGer8R9vJ+ty8qlFlBZ88vtfkK/lPfGl3YHN0CD3yMsYH3sKp41wAPIYqX7feNbS3/T3kAP7MRNw34RfjVVXRpCiiigCiiigCiiigCs+oWizRSQuMrIjIw8wwKn8DWiigJr5PbxpLCJXP0sHFBL58cBMRz7+EH41x7cNblAt3DL3XNZ4xnum8zjxJ9xB6+Vflh/ZdUmh5R3qd/H5d9EFjmX3sndP8GqkvVcoQnBxY2DglT6HG+/x9xozmcd6NjzaGOWSMxkpqVrghXXBuIcjAOG8WR5bk+nKsXZVGuYl0wpwBJjJcnHCWiXBCkHfiLkDfkAK6azZxwS95Ja3Fi4O01qweL7sLwj0GPdS3Ur5klW/gu4pnI4JCq8D4KleJ4yd8jAyMDIWqzzm7PPx7vHPnUutF1cF57o/m3mjtrZR1CHhyvoWdiT5L6Vt7aaWskazcAZoc5BGSY2xx49RhW+BHWlWnQRSS6fDbnit4ImnJ82P0aZ8m4jISPMGnvZ7V+8t1mc472WRU9xldYx/CBVkXZmuH5R3X18+5B3dkmA6xoSp4gAo8Q5EeuQTj1xXzdWsZQSLGh4cMMKPEuNxy3ypOPXFUOvaR83bjQfQMf/SJ6HyQ9D05bDFIye6Jz+bJz+wx5/uk/cfQ7bYtSVzz5wlTlZ/9NGmyAZjB8OA0flwN0HoDn3AqPKt3FSRoyrBRsdzCenm0Z9NuXly3TNfdtfPKz8BCgcOA6E7FQc7MPrca/u/f83jtlVJYhukspZ93H5Pfwe0qcaC6R5rL4HHFXzJMFBZiABzJOB95pbbXMx4ge7PCxXky9AfNvOuQueMCZ1IA/NpkEljtxDGxLcl9N9snGensfEOoozVlx1L6m1KCg5Qd3wNo1RCSoDkgZwEbkc4OSAMHB3zXKXUHLBEj4ScklyNgOvChOd8DBYfga5K3drlt3c8h1bGyj0AGM+QJPWvuCMjmC0khAwu5J6KvoN+ePrMcb169PYuGhnK77/o8qe1q8sopLuOkWnGd1hLF2c759lVGCzcI28PQkHxFRnevQLq6jto4xgLHxJGMclDeBPhnhHxrBo9gtqneSkd5IUViOQ4mCoi+gZufUknbYDDroa5N9Zde5jki/aPFj+eNfvrQ1COUEkuwRc4xvN3kxNJaSSJPbqcXOnzd7bE7ZibLqufLhyvlstJLa5F3fTXUdkZxgCOPgHBx4UcUrHwjABODucr5ZrT2v1gNHbyRNi4urcRyqPsMVO5+qeIMoz0LcsVg7yKKJbQ3ruu5MNlHkux58UrHD+WBtgDaqzLOSvbh3eGvYM3aNpVOo3HzmUH6OztgXRT5EL4SR5E+8kV6XZOSikxmPb2CRlR0B4ds+gJFSXYvTWj8Uditsh5vK5aZh5YAHAPQke6rGeVUVnYgKoJYnkABkn7q7RqoRsr8/wBJic9/q8a81soGkb0luT3afERxy/xVV1K/J9CzQyXsgIkvZDNg81iwEgU+6NVPvJqqqS8KKKKAKKKKAKKKKAKzanfJBDJPJkJEjO+NzwoCxwOpwK01J/KhORp8kK+3ctHboPNp3VD/AClj8KA0dr7Brm2Se1IaeBluLYg7OQPZz1WRGZf3gelNdD1RLqCO4j9mRQcHmp5Mp8mU5UjzBqe7Kn5lO2luSY+EyWTMecQI44snm0TEY/UZfI18g/k69IO1nevkHpDdN09El5+j5+1QDTXLW9yWtZ4x/s5UBX4MoyPcQffUjPBckn51o9vNnm8PCG9+xJz91ej3ECupR1DKeasMg+8GoLtL2b06A8bNcW5O+YhIV+/hZV9wIrloz1oPVevymTej6nLpjyiSCVYZgwQyJhwVB4d+RwW3APXI8jT3MJisdKRSD/aLbJByCSGY7jmMmpyZ7KRO6bVrlo8g8MkTOARyIJG3wxS2LWPmsscSzC5tY5VlQDY5UnkG3Rtzkcj8a5vYyRmoZN5d6y8j11tQ/thtWxh4A6jzIZlceuxT7jSHVeyuSz2sh4Rs0PEMKRuQpIPDsfZbblgqKy3mtwz3mn3UEgI43hkXkw71fCGXmNwd+Vb3ujbarwN+avUBHkJYxw/ioUHzytWRm1oanKMlZ5q/rzYj7rTmjIjYygfonIVsg5zGxGGx0wcDAwRisxkII4pJONeWcAup5jHDs+wI6MQMHcgXnZS7DGfT5wHa3bChxnjhO8ZOeZAIB/d86YXvZCzlXheBeH7KllHwCkAVcq3YVrD7yumeZF18aiV8O5JwRkpwrywObch8T9U10QZ8fGxx7JLARoOXtYw7fs5xyyNybm1+TnT424lhfJ58U8zf5nNPLXRbeI8SxIGH1iMsP3myfxqem7Cf8r4kBpfZ6WUhlMhJGDK54VxnPhGMsN9uEYOBlutWei6VDao7cZkdAe8kbGRsHKj7C4IOPdkk70ksu0XEL3UT+ZiHdW46Nw7k/vuUGfIDyrNMZItEkdyTNcAsxPMtcMB8PCwGOlUyqORMNyGazybvzxNPaHUGl0yCfk0kkD+7MisB/SufbLWBY3q3OOIyWzx8OfrK6shbqF8Tb+lLe1vaW3itI7KFhJJH3I4huimEqdz9Y5TGB65xU7aGGdvnV5qHDMSCoWMuQByztwr6KOXvqtsrqVc7J55Z8LGrRNOlDSTTabLcySbqrLwxDi8RO/XyGMAfhT6Xb6mTiK3srJPRQW+5Ccn34pCGsZnxLqd7KT9Xhff3Dhb8BV72f7NWkIWSGI8R3DyBuP8An3T7hRImjC7yf9XsvcbWELqgEkhkbq3CFHwC8h78++pvtrIbh4tLjzm48VyQfYtUPjz1BkOIx728qfa5q0drA88p8KDkObE7KqjqzEgAeZpX2Q02RFku7oAXNzh5RnaJFH0cIPki8z1Ysa7Nxv1vW4bNYe8IHeyxwxqPtOQowPIDJPoKa15Rr9nJqkF3qCg8ECH8nDzMLCR5x6yGMIv6o9a9M0q+WeGKdPZlRXHuYBv+dAa6KKKAKK/M1+0BJ/KNHdJbfOrKRlmt8sUA4lkj+upQ7MQBxDrsQCOKuOmdqLruo5pLT5zDIoZZ7NgcqerQyEOp8wpfrVlURov/AIbemxO1rdM0locbRyHxSwZ5AE5dB+0KAYx9vbDOJLgQt9m4V4j90qrS2K7TUtSjaF1ktLAFi6kFHuZFwoUjZu7jJJIOxYCrWSMMMMAR5EZ/rXzBAqDCKqjOcKABnz2oBV2p0T51EAj93PEwkglHNJF5Z81IyrDqpNZNMu4tTtZbe5i4XGYrqA80fzB58J2dHHMYI3FUlTnaPRpO8F7Z4F1GMMpOFuIxv3T+R+y/1T6E0JM3Z7U5LeUadeOWkwfm07f/AHEa9Cf0yD2h1HiHWqsipiWa01S0bvMp3Zy4Y8EttKm+c843TmG5EeYNKexvbcnu4L3iXvCRa3TrwJdICQrY5RyMADwnGQQRjIFCBtrzJGTjS2uP1ljiIP4lv5aRfl6XBRNEYA7EFMAj1+ixXotLdZhuWXFtLFGepdCx+GGAHxBqGimdN6p+h5d/oZeSy97Da/NQDxKGmBww38JA4l36HlXDXtcvUMUd4g7yGRZI5MANlTuOJDwsDtnbyqwl7F3cx/tGpSFeqxqVH3Bgv8tJtXTTtNPAkQubkfpDxBT5t9UH0Az7q4aMkqTir6d9vRHzcdsLZ723vY+8jYfRzqy+1Gc+LKk54TvjmdvKriPtjYnf51EPecf1xXlOnaDdajIZUijRCd3CiOMeihRlj7s+pqvsvkrjA+luJGPXgUKP5uI1KbOqU6zu4rXwKr/S2y/1uH+MUh7Yds7Y2sscE6tK44Bw5OAxAY5AxspNfj/JdaY2knB/aT/spHq3yXSqC1vMsn6rjhb4MMgn34o94sqSr7v6oW652ltzZw2VujlI2RnLgKJAuSRgEnxMcnlWua21TU0yQqQ7FUyEQ45YG7N6cW1KtL1T5ozW15ZxumfGrRqJR6hvrdcZ+BFV1n2LtLhBPYXMsIP2WJwfIgkOpHlxVCzM8VKp1+Ggr0OzuLDc6SZZORk4w+3koVW4R+NNoNYMjePQ3z590p/zxqPxplp+h6lCQBqCSKOksRP48XF/NVbEDgcWCeuBgZ9Ac4rpI006TtbNeRi0iNOAMtv3BP1SqA/+2SPxrVdXKRo0kjBEQFmZjgADckk8hXLVNRit4mmnkWONBlmY4A/6k8gBua89vdQa9ubf5/E8OnSt/Z0bYTTAgx/ORzVW5pGdiRvk4FdGpKw70iFtRnS+mUraxHNnEwwXY7fOHU8tvYU8geLmRXz2luHvpzpkBIiXBvpQfZQ7iBSP8R+v2Vz1Nd9f1yWWU2Gnkd//AI0+Mpaoep6NKR7MfxOAN3egaLFaQrDEDgZLMxy7u27O7c2ZjuTQG2CBURY0UKigKqgbAAYAA8sVEaPrEelmWwuO8EaMXtWWKRw0MpZgg7tWwY24lwcbcOKu6KEkse2LSbW1heTHozR9ynxacqce5TSDtZcaqyRxmeK1kuHEcENvl5CSMszzOBwoiBmPAudgM716LPMqKzsQqqCWJOAANySegAqY7Kwm6mbU5QQHXgtEP1LfOePB5PKQGPkoQedCB9oumrbQRwqSQgwWY5Zm5szHqzHJJ8zW2iigClfaTREvIGgclc4ZHX2o5FOUdT0ZTg/h1ppRQE72R1t5g9vcgJd25CzKOTg+xKnmjgZ9DkdKoaQdqNEeQpdWxCXcGe7J9mRD7UMnmjef1WwR1zs7P60l1HxqCjqSssTe3FIPaRh5+R5EYI2NCRnRRUx2s1WRnWwtGxczDLvz7iDOHlP631UHVvQGgEep6XFqeoERjENv9HeSoxAuGBDC2ODh1Q4LE5xnhGMmrTWNGguYGt541eJhjhI5Y5EY3UjoRypXCqWgg060VQ7IzAtuFjQqJJXxguxd1GMjiLE5ABplrel/OLd7czSRl1x3kZ4XHLcEeeNx5E0BKR/PtL2Ikv7EciN7mFfIj/HUeni+Aqq0HX7e8j722lWReuPaU+TKd0PoRWHsVrK3MLhFlCwSNAHlPEZe6wpk4h7WTnfzBr51nsZbTyd+oe3uOk9u3BJ+9jaQbDZgaA59vNVuIIMW0Ts75BdVz3Y6nA3z5dBz98H2B7IG6b5xOD3KsdjzlYHfJ58IPM9Tt51ZiTVbXZli1CMfWUiGfHqp+ic+4rnyrpH2/tFIW472zc/VuYmQZ9HwYz8GqGrsonQU5qUnlwKmOMKAqgADYADAA8gOlfVY7HVYJhmGaKQHkUdW/wAprZUl4UUUGgE3afs7FeRFHGHHsSAbqf8AmPMdfxryvQzeWF60aRO7AgSRqCQ6dCMcvMN069RXq+p9prO3/P3UEfo0i5+Azk/dSdu2hl2sbK5uSeTlO5h+Mk2Cf3VNcuNyipQUpKSdmVkT5AOCMgHB5jPQ+tTet9soopDbW6Nd3f6CLHh9ZX9mFfVt/Ssf5Avrv+/XYhiPO3s8rkeTzt428iFCitOgXNlb3H5Os4lUopaXgHsEcIXvDjJZgTuxydsZ3x0XnxpnZiWWVbrUnWaVTxRQL+YgPmoP5yT9dvgBTq9tYL63eNuGWGQFSQeqnGQR7LKy8+YI9KmO19xqVrcC7ilR7AGMzxd3mSNAQJXTAyw4csd9vKs+oE6c41G0+k0+ch7qJNwnHj+0xY6YOWA2I39QBp7BS/M3bSZlCyJxSQygYFzGTkufOVTs4O/I8quKRdrNAF5EvA/dTxHvLeZeccg5H1Rhsy8iDR2S143UbLKvd3MDcFxF9h8ZBHmjDxKeoPoaAe0UVMdo9XkeUWFmf7QwBllxlbaI/XPQyMMhE6nc7CgM+qt+Ubg2aH+ywMPnjDlI48S2wPlyaT0wvU4r1GNhWPRtLjtoVghXhRfXJJO7Mx5sxJJJPMmttCAooooAooooAqd13RJO9+e2ZC3KgB1Jwlwg/wAOTyYb8MnNT5gkVRUUAr0HW47pCVDI6HhlicYeN+qsP6EbEbgkVDdn9eWwvr2C+Qq0kwf54fZZJMiBZP0SgAoD7OQw2POx13s/3ri4gfuLpBhZQMhl593KvKSPPQ7jmpBqM7R60FkiluoRDdQhkniOGjurRsd93TEYlCbShD4hwkEb5oCh7W9nZ5pob6xnSO5hVlAkGYpY3wSjY3AyMgj/AKETXbDRdQ1SFbaewSB0YMlyt0GjXkHPdgcZyvEACPiN623LSWE8EWmE3EdwGf5kzeFIgMmSKUn6FSSqhWypLbYrR2EjtVnYRXF2koRg9ldSNxKWYuzhH9s5OONSRz3JJoB9pOtWq28ixyxBbTiicDhUK0Iw3hGyjY9PdW3QLl2tIJZyO8aFHkOMAMVDNt0AJNLdW7CafcO8slpEZHBy/DvkjHEehb1IqZ06XWNMURSwrqNsgwskR4Z1UbDKN7e3QZP61CSsk7X2w5d+/wDu7W4cfekRH400tZ1njDcDcLfVkQqceqOAR7iKlNP+VLT3bu5ZHtpesdzG0ZHvJ8I++qyy1CKYcUUsci+aMGH3qaAlb/szo89y1q9tb/OOASFVXgfhJIDZThJ3HQ5G3mK+U7A2IdoopbmNlCsUju5gVVuIKcFzgEo2Pca/b3SIJtdildAZILTjU5xhmkZFJxzwO8xmtFkeHW7lft2du38Mky/86ECzWuy1naRGa4vtQVAQP73KSWbYKqr4mJ8hXzJ2V0r5sbyZbmSFFLN38lySANjmN2zt6r610+V+0mNvb3FvIFnt7iNolIz3jue7VAOrEttnbGeXOmmi6FcujtqM4leWJo2hjHDAiuBxDHORjj226ZAwCcgM9K7N2dvgwWsEZ+0kag/xYyfvr67Ra/BZRd/cMVTiVdlLEs3IALuetL+wOpiazjjZw01vmCcZ8QkhPdtkdM8PF8ac6ldwxrxTvEiDcmRlA26+LahIo7X9q1sVVu5lmZg7lI8ZWKIAySHiIAC8Sj1JArbDdie1NzZd2Wmj44mYEKzcPg48eLAOAeo3Feb/ACia3pepmO3jW4vZ4myi2g88Bg0jKVEZwuWXOMD1pzonY67/ACZHbfOGsJDJKzJD4wkUrs3cgk7EAjDgkg550IPq6+Vi1SIrwSPehjG1miln71TwsvEBwsuQfEM5HIZ2p38nunTRWCR3MaxszSt3I3WNJHZ1jHMYUNjHTlWrR9EtNNt1ChI44VOZZCOLBPExZz5kk9B6Usk7SXF5ldMiHBvm8nBWEf7tNnnPqAF9TQDnW9dgso1485PhiiQcUkhGwVEG7H8B1NR/ZEXV3q097MqwJBGIO7QglmbD8EjjaRowQTjYFgAdjnDZ6rDZ2ct2/i1Ti+byNcMC4nbkAThUgx9KOEAcAzzrZ2d7+e3S009nitVz31+6+Od2JaVoFbclmLfStsM7A4FCSh1vtBI8xsbHhe5wO9kIzHbKfrP9qQ/Vj5nmcCm3Z/RI7SLu0LMzEtJI5y8kh9p3PUn7gMAbCumiaPDaxCGBAqjc9WZjzZmO7MepNb6EBRRRQBRRRQBRRRQBRRRQBWHWtHhuomhuI1kjbmD0PQgjdWHQjBFbqKAneyPZCKwD8DySFuFVaQ5ZIk9iJT9hck/Gt+udn7e7ULPEH4TlG3DoehR1wyH3GmdFASXzDUbT8xKt7EOUVweCYDyWZRwv++uf1q6W3bq3DCO6WSykO3DcrwqT+rKMxv8ABqqa5zwq6lXUMp5hgCD7wedAZLzT7e6Qd7HFOh5cSq4+Gc/hUzdfJVpTtxfNAp/UkkX8FYAfdW6TsHaAloFktXPW2kaIfFFPdn4qa5/kTUYvzOpLIOi3NurfzwmM/eDQGWw+Te2t7yG8tXlhMasrpxs4lVhsGMjEgDyHkORGaoV0kfPTd8W5gWHh9ztITn4gffSr51qyc7aym9UnkjJ+DRNj76Py5qA9rSif93dwn/PwUAdvFkVba5jiaYWtwJZIkGXZOCSMlB9Zl7ziA64rCvyraWTwid+Pl3fcTcefLHBzrd+X788tIlHvubfH4OT+FH5T1RvZ0+3T1kvCfwSE/wBaARXPYey1V2vHtrm1dsYk4hG8m3tGPxcI5DJAY+XInrYfI5pcbcTRSTHOfpZWP3hOEH45psbTVpPaubO3H+zheVh8ZHUfy1+jsYZP73fXlx5r3ncof3bcJ+JNAd59W07TlEXHBB5RRgcbH0jjBZj8KyjXL652tLPuUP8Aj3mV+KwL9I37xSnWj9nrW1GLe3ii8yqAE+9uZ+JpnQEta9i0d1mvpXvZVOV70AQofNIF8C+9uI+tVAFftFATWt9hrO7uUup4uN0XBUnwPj2S6/XK+IDO25znbFIigAADAGwA6Cv2igCiiigCiiigCiiigCiiigCiiigCiiigCiiigCiiigCiiigCiiigCiiigCiiigCiiigCiiigCiiigCiiigCiiigCiiigP//Z">
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+      * {
+        font-family: "IBM Plex Sans Arabic", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+        .error-id {
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="bg-[#f7f7f7] shadow-lg">
+        <ul class="flex justify-between p-2">
+          <li>
+            <a href="#" class="font-bold"
+              ><span class="font-normal"
+                ><i class="fa-solid fa-phone-flip text-sm"></i></span
+              >920000356
+            </a>
+          </li>
+          <li><a href="#" class="font-semibold">English</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="bg-[#fafafa] p-10">
+      <div class="row flex">
+        <a href="#">
+          <img src="https://salamah.998.gov.sa/assets/images/logo.svg" alt="" />
+        </a>
+      </div>
+    </div>
+
+    <div class="container w-[92%] m-auto shadow-lg">
+      <form action="" id="myForm">
+        <div class="p-12">
+          <h4 class="my-20 text-3xl flex justify-center">
+            تسجيل كمقدم طلب ترخيص سلامة
+          </h4>
+          <div class="flex justify-center items-center">
+            <div
+              class="flex items-center flex-column"
+              style="display: flex; flex-direction: column"
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-[#36ba8c] flex justify-center items-center"
+              >
+                <i class="fa-solid fa-check text-3xl text-white"></i>
+              </div>
+              <p class="opacity-75 font-bold text-lg">
+                بيانات المنشأة الرئيسية
+              </p>
+            </div>
+            <div class="">
+              <hr class="w-96 border-2 border-black opacity-25 max-md:w-40" />
+            </div>
+            <div
+              class="flex items-center flex-column"
+              style="display: flex; flex-direction: column"
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-white border-black border-2 opacity-25"
+              ></div>
+              <p class="opacity-75 font-bold text-lg">
+                بيانات الاتصال لمسؤول المنشأة
+              </p>
+            </div>
+          </div>
+
+          <h1 class="text-3xl mt-15">بيانات المنشأة</h1>
+          <hr
+            class="mt-5 mb-5 h-[2px] w-full border-0 bg-[linear-gradient(to_left,#68b08f_10rem,rgba(0,0,0,0.25)_20px)]"
+          />
+
+          <div class="flex gap-5 mt-10 max-md:flex-col">
+            <!-- المنشأة نوع -->
+            <div class="sm:col-span-3 w-[30%] max-md:w-[100%]">
+              <label
+                for="establishment"
+                class="block text-xl text-black opacity-60 max-md:w-full max-sm:w-40"
+                >نوع المنشأة</label
+              >
+              <div class="mt-2 grid grid-cols-1">
+                <select
+                  id="establishment"
+                  name="establishment"
+                  autocomplete="off"
+                  class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-3 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 text-lg"
+                >
+                  <option value="">الرجاء الاختيار</option>
+                  <option value="foundation">مؤسسة</option>
+                  <option value="company">شركة</option>
+                </select>
+                <p class="error"></p>
+              </div>
+            </div>
+            <div
+              id="customInputContainer"
+              class="sm:col-span-3 w-96 hidden w-[30%] max-md:w-[100%]"
+            >
+              <label
+                for="customInput"
+                class="block text-xl font-medium text-gray-900 opacity-60 font-bold"
+              >
+                رقم وزارة الداخلية</label
+              >
+              <div class="mt-2 grid grid-cols-1">
+                <input
+                  type="text"
+                  id="input1"
+                  name="customInput"
+                  class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-3 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                />
+                <p class="error" id="errorMessage">رقم وزارة الداخلية غير صحيح</p>
+              </div>
+            </div>
+
+            <!-- رمز التحقق -->
+            <div class="sm:col-span-3 w-[30%] max-md:w-[100%]">
+              <label
+                for="verification"
+                class="block text-xl font-medium text-gray-900 opacity-60 font-bold"
+                >رمز التحقق</label
+              >
+              <div class="mt-2 grid grid-cols-1">
+                <input
+                  type="text"
+                  id="verification"
+                  name="verification"
+                  class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-3 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                />
+                <p class="error" id="errorMessageCode">الرجاء ادخال رمز التحقق</p>
+              </div>
+              <div class="flex items-center gap-4">
+                <img
+                  src="data:image/png;base64,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"
+                  alt=""
+                />
+                <button>
+                  <i class="fa-solid fa-rotate-right text-4xl"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Dynamic Input for Custom Company Name -->
+          </div>
+
+          <button
+            class="border-2 border-[#68b08f] rounded-lg text-[#68b08f] mt-20 text-xl"
+            style="padding: 10px 50px"
+          >
+            تحقق
+          </button>
+
+          <h1 class="text-2xl mt-20">بيانات المدير المفوض للمنشأة</h1>
+          <hr
+            class="mt-5 mb-5 h-[2px] w-full border-0 bg-[linear-gradient(to_left,#68b08f_10rem,rgba(0,0,0,0.25)_20px)]"
+          />
+          <div class="flex gap-5 max-md:flex-col mt-10">
+            <!-- المنشأة نوع -->
+            <div class="sm:col-span-3 w-[30%] max-md:w-[100%]">
+              <label
+                for="establishment"
+                class="block text-xl font-medium text-gray-900 opacity-60 font-bold max-md:w-full max-sm:w-40"
+                >نوع الهوية</label
+              >
+              <div class="mt-2 grid grid-cols-1">
+                <select
+                  id="establishment"
+                  name="establishment"
+                  autocomplete="off"
+                  class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-3 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 text-lg"
+                >
+                  <option value="">الرجاء الاختيار</option>
+                  <option value="foundation">هوية وطنية</option>
+                  <option value="foundation">هوية مقيم</option>
+                  <option value="company">هوية خليجية</option>
+                </select>
+               
+              </div>
+            </div>
+
+            <!-- رمز التحقق -->
+            <div class="sm:col-span-3 w-[30%] max-md:w-[100%]">
+              <label
+                for="verification"
+                class="block text-xl font-medium text-gray-900 opacity-60 font-bold"
+                >رقم الهوية
+            </label>
+              <div class="mt-2 grid grid-cols-1">
+                <input
+                  type="text"
+                  id="verification"
+                  name="verification"
+                  class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-3 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                />
+                <p class="error" id="requireInputID">الحقل مطلوب</p>
+              </div>
+            </div>
+            <div class="sm:col-span-3 w-96 w-[30%] max-md:w-[100%]">
+              <label
+                for="verification"
+                class="block text-xl font-medium text-gray-900 opacity-90 font-bold"
+                >تاريخ الميلاد</label
+              >
+              <div class="mt-2 grid grid-cols-1">
+                <input
+                  type="date"
+                  id="verification"
+                  name="verification"
+                  class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-3 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                />
+                <p class="error" id="requireInputDate">الحقل مطلوب</p>
+              </div>
+            </div>
+
+            <!-- Dynamic Input for Custom Company Name -->
+          </div>
+          <div class="sm:col-span-3 mt-10 w-[30%] max-md:w-[100%]">
+            <label
+              for="verification"
+              class="block text-xl font-medium text-gray-900 opacity-60 font-bold"
+              >رمز التحقق</label
+            >
+            <div class="mt-2 grid grid-cols-1">
+              <input
+                type="text"
+                id="verification"
+                name="verification"
+                class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-3 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+              />
+              <p class="error" id="requireInputCode"> 
+                الرجاء ادخال رمز التحقق</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+              />
+              <button><i class="fa-solid fa-rotate-right text-4xl"></i></button>
+            </div>
+          </div>
+          <div class="flex justify-end w-[95%] m-auto">
+            <button
+              class="border-2 border-[#68b08f] rounded-lg text-[#68b08f] mt-20 text-xl"
+              style="padding: 10px 50px"
+            >
+              تحقق
+            </button>
+          </div>
+          <div class="error-id py-5 px-3 rounded-lg bg-[#fcebec] mt-10 " id="error-id" >
+            <p class="text-lg text-[#6e1b24]">التحقق من صحة رقم الهوية</p>
+          </div>
+
+          <h1 class="text-2xl mt-20">الرقم الضريبي للمنشأة</h1>
+          <hr
+            class="mt-5 mb-5 h-[2px] w-full border-0 bg-[linear-gradient(to_left,#68b08f_10rem,rgba(0,0,0,0.25)_20px)]"
+          />
+          <div class="sm:col-span-3 mt-10 w-[30%] max-md:w-[100%]">
+            <label
+            for="verification"
+            class="flex items-center gap-2 text-xl font-medium text-gray-900 opacity-60 font-bold"
+          >
+            الرقم الضريبي للمنشأة
+            <span class="text-lg">(اختياري)</span>
+            <div class="relative inline-block">
+              <span
+                class="border-2 border-black rounded-full w-5 h-5 flex items-center justify-center 
+                       hover:text-[#36ba8c] hover:border-[#36ba8c] relative group"
+              >
+                <i class="fa-solid fa-exclamation text-sm"></i>
+          
+                <!-- Tooltip: Hidden on md screens -->
+                <div
+                  class="absolute text-xl w-60 h-40 flex items-center justify-center right-8 top-1/2 
+                         -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-md opacity-0 invisible 
+                         transition-opacity duration-200 group-hover:opacity-100 group-hover:visible 
+                         whitespace-normal break-words text-center leading-relaxed 
+                         
+                         max-md:hidden"
+                >
+                  <p class="text-xl">
+                    الرجاء ادخال الرقم الضريبي لكم دون اي مسؤؤلية عن شركة علم
+                  </p>
+                </div>
+              </span>
+            </div>
+          </label>
+          
+
+            <div class="mt-2 grid grid-cols-1">
+              <input
+                type="text"
+                id="verification"
+                name="verification"
+                class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-3 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+              />
+            </div>
+          </div>
+          <hr
+            class="mt-20 h-[2px] w-full border-0 bg-[linear-gradient(to_left,#68b08f_10rem,rgba(0,0,0,0.25)_20px)]"
+          />
+          <div class="flex justify-between max-md:flex-col">
+            <button
+              class="border border-[#db3545] rounded-lg text-[#db3545] hover:bg-[#db3545] hover:text-white hover:border-[#db3545] transition duration-300 ease-in-out mt-20 text-xl px-[100px] py-[10px]"
+            >
+              الغاء
+            </button>
+            <button
+              data-modal-target="popup-modal"
+              data-modal-toggle="popup-modal"
+              type="button"
+              class="border-2 border-[#68b08f] rounded-lg text-[#68b08f] mt-20 text-xl"
+              style="padding: 10px 100px"
+            >
+              التالي
+            </button>
+
+            <div
+              id="popup-modal"
+              tabindex="-1"
+              class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+            >
+              <div class="relative p-4 w-full max-w-md max-h-full">
+                <div
+                  class="relative w-[100%] h-60 bg-white rounded-lg shadow-sm bg-white flex items-center"
+                >
+                  <div class="p-4 md:p-5 flex justify-end flex-col items-end">
+                    <h3
+                      class="mb-5 text-lg text-center font-normal text-gray-500 dark:text-gray-400"
+                    >
+                      الرجاء تعبئة جميع المعلومات المطلوبة والضغط على زر التحقق.
+                    </h3>
+
+                    <button
+                      data-modal-hide="popup-modal"
+                      type="button"
+                      class="py-2.5 px-5 w-20 text-sm font-medium text-gray-900 focus:outline-none bg-[#36ba8c] text-white rounded-lg"
+                    >
+                      حسنا
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <hr class="mt-20 border-2 w-[96%] m-auto" />
+    <footer>
+      <p class="text-center p-10 text-xl text-[#36ba8c]">
+        جميع الحقوق محفوظة © علم 2025
+      </p>
+    </footer>
+    <script>
+      document
+        .getElementById("establishment")
+        .addEventListener("change", function () {
+          let customInputContainer = document.getElementById(
+            "customInputContainer"
+          );
+
+          if (this.value === "company" || this.value === "foundation") {
+            customInputContainer.classList.remove("hidden"); // Show input when "شركة" is selected
+          } else {
+            customInputContainer.classList.add("hidden"); // Hide input otherwise
+          }
+        });
+
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            let usernameInput = document.getElementById("input1");
+            let errorMessage = document.getElementById("errorMessage");
+            let errorMessageId = document.getElementById("error-id");
+
+
+
+            if (usernameInput.value.length <10 ) {
+                errorMessage.style.display = "block"; // Show error message
+                errorMessageId.style.display = "block"; // Show error message
+                
+                usernameInput.style.border = "2px solid red"; // Highlight input
+            } else {
+                errorMessage.style.display = "none"; // Hide error message
+                usernameInput.style.border = ""; // Remove red border
+                alert("Form submitted successfully!");
+            }
+
+            
+            
+        });
+    </script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  </body>
+</html>
