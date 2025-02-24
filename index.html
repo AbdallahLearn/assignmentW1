@@ -78,7 +78,7 @@
       </div>
     </div>
 
-    <div class="container w-[92%] m-auto shadow-lg ">
+    <div class="container w-[92%] m-auto shadow-lg">
       <form action="" id="myForm">
         <div class="p-12">
           <h4 class="my-20 text-3xl flex justify-center">
@@ -139,19 +139,27 @@
                 <p class="error"></p>
               </div>
             </div>
-            <div id="customInputContainer" class="sm:col-span-3 w-96 hidden w-[30%] max-md:w-[100%]">
-                <label for="customInput" class="block text-xl font-medium text-gray-900 opacity-60 font-bold">
-                    رقم وزارة الداخلية
-                </label>
-                <div class="mt-2 grid grid-cols-1">
-                    <input
-                        type="text"
-                        id="input1"
-                        name="customInput"
-                        class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-3 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                    />
-                    <p class="error" id="errorMessage">رقم وزارة الداخلية غير صحيح</p>
-                </div>
+            <div
+              id="customInputContainer"
+              class="sm:col-span-3 w-96 hidden w-[30%] max-md:w-[100%]"
+            >
+              <label
+                for="customInput"
+                class="block text-xl font-medium text-gray-900 opacity-60 font-bold"
+              >
+                رقم وزارة الداخلية
+              </label>
+              <div class="mt-2 grid grid-cols-1">
+                <input
+                  type="text"
+                  id="input1"
+                  name="customInput"
+                  class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-3 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                />
+                <p class="error" id="errorMessage">
+                  رقم وزارة الداخلية غير صحيح
+                </p>
+              </div>
             </div>
 
             <!-- رمز التحقق -->
@@ -193,7 +201,9 @@
             تحقق
           </button>
 
-          <h1 class="text-2xl mt-20" id="establishmentTitle">بيانات المدير المفوض للمنشأة</h1>
+          <h1 class="text-2xl mt-20" id="establishmentTitle">
+            بيانات المدير المفوض للمنشأة
+          </h1>
           <hr
             class="mt-5 mb-5 h-[2px] w-full border-0 bg-[linear-gradient(to_left,#68b08f_10rem,rgba(0,0,0,0.25)_20px)]"
           />
@@ -213,7 +223,6 @@
                   class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-3 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 text-lg"
                 >
                   <option value="">الرجاء الاختيار</option>
-                 
                 </select>
               </div>
             </div>
@@ -340,8 +349,18 @@
               الغاء
             </button>
             <button
+            
+            id="bring"
+            type="button"
+            class="border-2 border-[#68b08f] rounded-lg text-[#68b08f] mt-20 text-xl"
+            style="padding: 10px 50px"
+          >
+            Bring
+          </button>
+            <button
               data-modal-target="popup-modal"
               data-modal-toggle="popup-modal"
+              id="nextBtn"
               type="button"
               class="border-2 border-[#68b08f] rounded-lg text-[#68b08f] mt-20 text-xl"
               style="padding: 10px 100px"
@@ -379,6 +398,7 @@
           </div>
         </div>
       </form>
+      <div id="dataContainer" style="margin-top: 20px;"></div>
     </div>
 
     <hr class="mt-20 border-2 w-[96%] m-auto" />
@@ -388,78 +408,179 @@
       </p>
     </footer>
     <script>
-        //fetch data from api 
-        document.addEventListener("DOMContentLoaded", function () {
-            const apiURL = "https://67b9fda451192bd378df03b2.mockapi.io/information";
+      //fetch data from api
+      document.addEventListener("DOMContentLoaded", function () {
+    const apiURL = "https://67b9fda451192bd378df03b2.mockapi.io/information";
 
-            async function fetchData() {
-                try {
-                    const response = await fetch(apiURL);
-                    const data = await response.json();
+    async function fetchData() {
+        try {
+            const response = await fetch(apiURL);
+            const data = await response.json();
 
-                    // تعريف القيم مباشرة
-                    const establishmentTypes = ["مؤسسة", "شركة"];
-                    const identityTypes = ["هوية وطنية", "هوية مقيم", "هوية خليجية"];
+            const establishmentTypes = ["مؤسسة", "شركة"];
+            const identityTypes = ["هوية وطنية", "هوية مقيم", "هوية خليجية"];
 
-                    // تعبئة القوائم
-                    populateSelect("establishmentType", establishmentTypes);
-                    populateSelect("identityType", identityTypes);
-                } catch (error) {
-                    console.error("Error fetching data:", error);
-                }
-            }
+            populateSelect("establishmentType", establishmentTypes);
+            populateSelect("identityType", identityTypes);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    }
 
-            function populateSelect(selectId, options) {
-                const selectElement = document.getElementById(selectId);
-                options.forEach(option => {
-                    const opt = document.createElement("option");
-                    opt.value = option;
-                    opt.textContent = option;
-                    selectElement.appendChild(opt);
-                });
-            }
-
-            // استدعاء البيانات عند تحميل الصفحة
-            fetchData();
-
-            document.getElementById("establishmentType").addEventListener("change", function () {
-                let customInputContainer = document.getElementById("customInputContainer");
-                let titleElement = document.getElementById("establishmentTitle");
-
-                if (this.value === "مؤسسة" || this.value === "شركة") {
-                    customInputContainer.classList.remove("hidden"); // إظهار الحقل
-                } else {
-                    customInputContainer.classList.add("hidden"); // إخفاء الحقل
-                }
-
-                // تحديث العنوان بناءً على الاختيار
-                if (this.value === "مؤسسة") {
-                    titleElement.textContent = "بيانات مالك المنشأة";
-                } else {
-                    titleElement.textContent = "بيانات المدير المفوض للمنشأة"; // القيمة الافتراضية
-                }
-            });
+    function populateSelect(selectId, options) {
+        const selectElement = document.getElementById(selectId);
+        options.forEach((option) => {
+            const opt = document.createElement("option");
+            opt.value = option;
+            opt.textContent = option;
+            selectElement.appendChild(opt);
         });
+    }
 
-      document
-        .getElementById("myForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent form submission
+    fetchData();
 
-          let usernameInput = document.getElementById("input1");
-          let errorMessage = document.getElementById("errorMessage");
-          let errorMessageId = document.getElementById("error-id");
+    document.getElementById("establishmentType").addEventListener("change", function () {
+        let customInputContainer = document.getElementById("customInputContainer");
+        let titleElement = document.getElementById("establishmentTitle");
 
-          if (usernameInput.value.length < 10) {
-            errorMessage.style.display = "block"; // Show error message
-            errorMessageId.style.display = "block"; // Show error message
+        if (this.value === "مؤسسة" || this.value === "شركة") {
+            customInputContainer.classList.remove("hidden");
+        } else {
+            customInputContainer.classList.add("hidden");
+        }
 
-            usernameInput.style.border = "2px solid red"; // Highlight input
-          } else {
-            errorMessage.style.display = "none"; // Hide error message
-            usernameInput.style.border = ""; // Remove red border
-            alert("Form submitted successfully!");
-          }
+        titleElement.textContent = this.value === "مؤسسة" ? "بيانات مالك المنشأة" : "بيانات المدير المفوض للمنشأة";
+    });
+
+    const nextBtn = document.getElementById("nextBtn");
+    const modal = document.getElementById("popup-modal");
+    const closeModalBtn = document.querySelector("[data-modal-hide='popup-modal']");
+    let lastFocusedElement; // لحفظ العنصر السابق
+
+    nextBtn.addEventListener("click", async function () {
+        let usernameInput = document.getElementById("input1");
+        let identityInput = document.getElementById("verification");
+        let birthDateInput = document.querySelector("input[type='date']");
+        let establishmentType = document.getElementById("establishmentType").value;
+        let identityType = document.getElementById("identityType").value;
+
+        let errorMessage = document.getElementById("errorMessage");
+        let errorMessageId = document.getElementById("error-id");
+        let errorMessageDate = document.getElementById("requireInputDate");
+
+        let isValid = true;
+
+        if (!usernameInput.value.trim()) {
+            errorMessage.style.display = "block";
+            usernameInput.style.border = "2px solid red";
+            isValid = false;
+        } else {
+            errorMessage.style.display = "none";
+            usernameInput.style.border = "";
+        }
+
+        if (!identityInput.value.trim()) {
+            errorMessageId.style.display = "block";
+            identityInput.style.border = "2px solid red";
+            isValid = false;
+        } else {
+            errorMessageId.style.display = "none";
+            identityInput.style.border = "";
+        }
+
+        if (!birthDateInput.value.trim()) {
+            errorMessageDate.style.display = "block";
+            birthDateInput.style.border = "2px solid red";
+            isValid = false;
+        } else {
+            errorMessageDate.style.display = "none";
+            birthDateInput.style.border = "";
+        }
+
+        if (isValid) {
+            const formData = {
+                username: usernameInput.value,
+                identityNumber: identityInput.value,
+                birthDate: birthDateInput.value,
+                establishmentType: establishmentType,
+                identityType: identityType,
+            };
+
+            try {
+                const response = await fetch(apiURL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    alert("تم حفظ البيانات بنجاح!");
+                    console.log("Success:", await response.json());
+                } else {
+                    alert("حدث خطأ أثناء حفظ البيانات، يرجى المحاولة مرة أخرى.");
+                }
+            } catch (error) {
+                console.error("Error sending data:", error);
+            }
+        } else {
+            lastFocusedElement = document.activeElement; // حفظ العنصر الذي كان عليه التركيز
+            modal.classList.remove("hidden");
+            modal.setAttribute("aria-modal", "true");
+            modal.setAttribute("role", "dialog");
+            modal.querySelector("button").focus(); // نقل التركيز للزر داخل المودال
+        }
+    });
+
+    closeModalBtn.addEventListener("click", function () {
+        modal.classList.add("hidden");
+        modal.removeAttribute("aria-modal");
+        modal.removeAttribute("role");
+        if (lastFocusedElement) lastFocusedElement.focus(); // إرجاع التركيز للعنصر السابق
+    });
+});
+
+document.getElementById("bring").addEventListener("click", async function () {
+            const apiURL = "https://67b9fda451192bd378df03b2.mockapi.io/information/2"; // Fetch specific ID 2
+            const dataContainer = document.getElementById("dataContainer");
+
+            try {
+                const response = await fetch(apiURL);
+                if (!response.ok) throw new Error("Failed to fetch data");
+
+                const item = await response.json();
+
+                // Display the specific data
+                dataContainer.innerHTML = `
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-300 shadow-lg rounded-lg">
+                            <thead class="bg-[#68b08f] text-white">
+                                <tr>
+                                    <th class="px-4 py-2 border">ID</th>
+                                    <th class="px-4 py-2 border">Username</th>
+                                    <th class="px-4 py-2 border">Identity Number</th>
+                                    <th class="px-4 py-2 border">Birth Date</th>
+                                    <th class="px-4 py-2 border">Establishment Type</th>
+                                    <th class="px-4 py-2 border">Identity Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-center">
+                                    <td class="px-4 py-2 border">${item.id}</td>
+                                    <td class="px-4 py-2 border">${item.username || "N/A"}</td>
+                                    <td class="px-4 py-2 border">${item.identityNumber || "N/A"}</td>
+                                    <td class="px-4 py-2 border">${item.birthDate || "N/A"}</td>
+                                    <td class="px-4 py-2 border">${item.establishmentType || "N/A"}</td>
+                                    <td class="px-4 py-2 border">${item.identityType || "N/A"}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                dataContainer.innerHTML = "<p style='color: red;'>Failed to fetch data. Please try again.</p>";
+            }
         });
     </script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
